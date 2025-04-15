@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+</head>
+<body>
+    <h1>Update Book</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="id_title">Title</label>
+            {{ form.title }}
+        </div>
+        <div>
+            <label for="id_author">Author</label>
+            {{ form.author }}
+        </div>
+        <div>
+            <label for="id_publication_date">Publication Date</label>
+            {{ form.publication_date }}
+        </div>
+        <div>
+            <label for="id_isbn">ISBN</label>
+            {{ form.isbn }}
+        </div>
+        <div>
+            <label for="id_genre">Genre</label>
+            {{ form.genre }}
+        </div>
+        <button type="submit">Update Book</button>
+    </form>
+    <br>
+    <a href="{% url 'book_list' %}">Back to Book List</a>
+</body>
+</html>
